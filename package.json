@@ -1,0 +1,19 @@
+{
+  "name": "resource-manager-plugins",
+  "version": "1.0.0",
+  "description": "iframe-plugins",
+  "main": "spring-summer-plugin.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hchenxiao/resource-manager-plugins.git"
+  },
+  "author": "gy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hchenxiao/resource-manager-plugins/issues"
+  },
+  "homepage": "https://github.com/Hchenxiao/resource-manager-plugins#readme"
+}
