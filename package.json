@@ -1,6 +1,6 @@
 {
   "name": "resource-manager-plugins",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "iframe-plugins",
   "main": "spring-summer-plugin.js",
   "scripts": {
