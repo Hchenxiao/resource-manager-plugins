@@ -54,7 +54,7 @@ SenseSpringPlugin.prototype.open = function (opt) {
     encodeURIComponent(window.location.href) +
     '&creator=' +
     encodeURIComponent(opt.creator) +
-    `#/${opt.type === 'resource' ? RESOURCEROUTER : RESOURCEVERSION}` //此处修改为具体的list页面地址
+    `/${opt.type === 'resource' ? RESOURCEROUTER : RESOURCEVERSION}` //此处修改为具体的list页面地址
 
   this.container.appendChild(iframeDom)
   if (this.callback.open_callback) {
