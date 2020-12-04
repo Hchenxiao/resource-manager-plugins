@@ -59,8 +59,9 @@ SenseSpringPlugin.prototype.open = function (opt) {
     this.host +
     `/${
       opt.type === 'resource' ? RESOURCEROUTER : RESOURCEVERSION
-    }/?resourceType=
-    ${encodeURIComponent(opt.resourceType)}&algorithmType=${encodeURIComponent(
+    }/?resourceType=${encodeURIComponent(
+      opt.resourceType
+    )}&algorithmType=${encodeURIComponent(
       opt.algorithmType
     )}&parent_host=${encodeURIComponent(
       window.location.href

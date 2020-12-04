@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/Hchenxiao/resource-manager-plugins#readme",
   "dependencies": {
-    "resource-manager-plugins": "^1.0.4"
+    "resource-manager-plugins": "^1.0.5"
   }
 }
