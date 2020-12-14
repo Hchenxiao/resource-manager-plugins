@@ -7,7 +7,7 @@
 安装引入
 
 ```
-npm i resources-manager-plugins
+npm i resource-manager-plugins
 ```
 
 插件默认导出全局变量 可以通过 import 方式引入
@@ -34,7 +34,7 @@ SENSE_SPRING.open(
 
 opt:object = {
   resourceType: string  资源类型 创建资源参数
-  algorithmType: string  资源版本算法类型  CLASSIFICATION || DETECTION
+  algorithmType: string  资源算法类型  CLASSIFICATION || DETECTION || SEMANTIC_SEGMENTATION
   type:  string         打开弹窗的类型(必填项)  resource 资源选择   version 版本选择
   creator: string       创建资源的用户名
 }
