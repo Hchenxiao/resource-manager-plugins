@@ -57,7 +57,7 @@ SenseSpringPlugin.prototype.open = function (opt) {
   //   `/${opt.type === 'resource' ? RESOURCEROUTER : RESOURCEVERSION}` //此处修改为具体的list页面地址
   iframeDom.src =
     this.host +
-    `/${
+    `/resource/${
       opt.type === 'resource' ? RESOURCEROUTER : RESOURCEVERSION
     }/?resourceType=${encodeURIComponent(
       opt.resourceType
