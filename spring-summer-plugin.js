@@ -36,8 +36,8 @@ SenseSpringPlugin.prototype.setCallback = function (name, func) {
 }
 
 SenseSpringPlugin.prototype.open = function (opt) {
-  const RESOURCEROUTER = 'Resource/resource-plugin'
-  const RESOURCEVERSION = 'Resource/resource-version-plugin'
+  const RESOURCEROUTER = 'res/resource-plugin'
+  const RESOURCEVERSION = 'res/version-plugin'
   var iframeDom = document.createElement('iframe')
   iframeDom.style.border = '0'
   iframeDom.width = '100%'

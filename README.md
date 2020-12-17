@@ -1,4 +1,4 @@
-# resource-manager-plugin
+# resource-manager-plugins
 
 资源中心插件（资源查询+资源版本查询）
 
@@ -34,7 +34,7 @@ SENSE_SPRING.open(
 
 opt:object = {
   resourceType: string  资源类型 创建资源参数
-  algorithmType: string  资源算法类型  CLASSIFICATION || DETECTION || SEMANTIC_SEGMENTATION
+  algorithmType: string  资源算法类型  CLASSIFICATION || DETECTION || LIGHT_SEG
   type:  string         打开弹窗的类型(必填项)  resource 资源选择   version 版本选择
   creator: string       创建资源的用户名
 }

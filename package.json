@@ -1,6 +1,6 @@
 {
   "name": "resource-manager-plugins",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "iframe-plugins",
   "main": "spring-summer-plugin.js",
   "scripts": {
@@ -15,8 +15,5 @@
   "bugs": {
     "url": "https://github.com/Hchenxiao/resource-manager-plugins/issues"
   },
-  "homepage": "https://github.com/Hchenxiao/resource-manager-plugins#readme",
-  "dependencies": {
-    "resource-manager-plugins": "^1.0.5"
-  }
+  "homepage": "https://github.com/Hchenxiao/resource-manager-plugins#readme"
 }
