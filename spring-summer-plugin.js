@@ -65,7 +65,9 @@ SenseSpringPlugin.prototype.open = function (opt) {
       opt.algorithmType
     )}&parent_host=${encodeURIComponent(
       window.location.href
-    )}&creator=${encodeURIComponent(opt.creator)}` //此处修改为具体的list页面地址
+    )}&creator=${encodeURIComponent(opt.creator)}&others=${encodeURIComponent(
+      opt.resourceName
+    )}` //此处修改为具体的list页面地址
 
   this.container.appendChild(iframeDom)
   if (this.callback.open_callback) {
