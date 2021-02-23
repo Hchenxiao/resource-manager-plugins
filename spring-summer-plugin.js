@@ -38,7 +38,7 @@ SenseSpringPlugin.prototype.setCallback = function (name, func) {
 SenseSpringPlugin.prototype.open = function (opt) {
   const RESOURCEROUTER = 'res/resource-plugin'
   const RESOURCEVERSION = 'res/version-plugin'
-  const RESOURCEMUTIPLEVERSION = '/res/mutipleversions-plugin'
+  const RESOURCEMUTIPLEVERSION = 'res/mutipleversions-plugin'
   let routerPage = ''
   opt.type === 'resource'
     ? (routerPage = RESOURCEROUTER)
