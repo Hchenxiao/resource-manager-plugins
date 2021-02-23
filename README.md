@@ -35,8 +35,12 @@ SENSE_SPRING.open(
 opt:object = {
   resourceType: string  资源类型 创建资源参数
   algorithmType: string  资源算法类型  CLASSIFICATION || DETECTION || SEMANTIC_SEGMENTATION
-  type:  string         打开弹窗的类型(必填项)  resource 资源选择   version 版本选择
+  type:  string         打开弹窗的类型(必填项)  resource 资源选择   version 版本选择  mutipleversions 版本多选
   creator: string       创建资源的用户名
+  others: {
+    fromModel: 'panorama',  string  // 来自的模块  'evaluate' [来源于评测中心]
+    content: string       格式不限，需要与资源中心确定逻辑  // 内容   6 [评测中心可以传数值，限制选择数量，数值类型]
+  }       其他内容
 }
 ```
 

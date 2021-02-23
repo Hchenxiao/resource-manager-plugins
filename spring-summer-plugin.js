@@ -38,35 +38,29 @@ SenseSpringPlugin.prototype.setCallback = function (name, func) {
 SenseSpringPlugin.prototype.open = function (opt) {
   const RESOURCEROUTER = 'res/resource-plugin'
   const RESOURCEVERSION = 'res/version-plugin'
+  const RESOURCEMUTIPLEVERSION = '/res/mutipleversions-plugin'
+  let routerPage = ''
+  opt.type === 'resource'
+    ? (routerPage = RESOURCEROUTER)
+    : opt.type === 'version'
+    ? (routerPage = RESOURCEVERSION)
+    : (routerPage = RESOURCEMUTIPLEVERSION)
   var iframeDom = document.createElement('iframe')
   iframeDom.style.border = '0'
   iframeDom.width = '100%'
   iframeDom.height = '100%'
   iframeDom.name = this.frameName
   iframeDom.id = 'frame_id_' + this.frameName
-  // iframeDom.src =
-  //   this.host +
-  //   '/?resourceType=' +
-  //   encodeURIComponent(opt.resourceType) +
-  //   '&algorithmType=' +
-  //   encodeURIComponent(opt.algorithmType) +
-  //   '&parent_host=' +
-  //   encodeURIComponent(window.location.href) +
-  //   '&creator=' +
-  //   encodeURIComponent(opt.creator) +
-  //   `/${opt.type === 'resource' ? RESOURCEROUTER : RESOURCEVERSION}` //此处修改为具体的list页面地址
   iframeDom.src =
     this.host +
-    `/resource/${
-      opt.type === 'resource' ? RESOURCEROUTER : RESOURCEVERSION
-    }/?resourceType=${encodeURIComponent(
+    `/resource/${routerPage}/?resourceType=${encodeURIComponent(
       opt.resourceType
     )}&algorithmType=${encodeURIComponent(
       opt.algorithmType
     )}&parent_host=${encodeURIComponent(
       window.location.href
     )}&creator=${encodeURIComponent(opt.creator)}&others=${encodeURIComponent(
-      opt.resourceName
+      opt.others
     )}` //此处修改为具体的list页面地址
 
   this.container.appendChild(iframeDom)
