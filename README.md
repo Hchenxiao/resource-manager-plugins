@@ -33,15 +33,21 @@ SENSE_SPRING.open(
 )
 
 opt:object = {
-  resourceType: string  资源类型 创建资源参数
-  algorithmType: string  资源算法类型  CLASSIFICATION || DETECTION || SEMANTIC_SEGMENTATION
-  type:  string         打开弹窗的类型(必填项)  resource 资源选择   version 版本选择  mutipleversions 版本多选
-  creator: string       创建资源的用户名
-  others: {
-    fromModel: 'panorama',  string  // 来自的模块  'evaluate' [来源于评测中心]
-    content: string       格式不限，需要与资源中心确定逻辑  // 内容   6 [评测中心可以传数值，限制选择数量，数值类型]
-  }       其他内容
+  type:  string          打开弹窗的类型(必填项)  resource 资源选择(单选)   version 版本选择(单选)  mutipleversions 版本选择(多选)
+  resourceType: string   资源类型(选填) 
+  algorithmType: string  资源算法类型(选填) 
+  creator: string        创建资源的用户名 使用resource资源选择单选插件时必填
+  others: {              自定义参数(选填) 其他内容 -->  业务逻辑需要与资源中心确定
+    fromModel: 'panorama',  string  // 来自的模块  
+    content: 类型需要与资源中心确定 //  内容
+  }       
 }
+# 详细说明
+  * type 页面路由，确定打开页面也就是弹窗类型
+  * resourceType 资源类型 , 也就是选择资源的类型 例如 原始数据集、已标注数据集、评测报告等  详细参照内部文档
+  * algorithmType 算法类型  CLASSIFICATION || DETECTION || SEMANTIC_SEGMENTATION 
+  * creator 创建者  type为resource时，插件有创建资源的功能，必须传递创建者参数
+  * others 其他参数  为了区分不同模块的不同需求，固定格式参考以上， eg:评测中心的限制选择数量   others:{fromModel:'evaluate',content:5}  content为数值类型
 ```
 
 方法 3. 关闭插件
