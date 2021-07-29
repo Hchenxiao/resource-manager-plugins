@@ -1,4 +1,4 @@
-# resource-manager-plugins
+# resource-plugin
 
 资源中心插件（资源查询+资源版本查询）
 
@@ -7,13 +7,13 @@
 安装引入
 
 ```
-npm i resource-manager-plugins
+npm i resource-plugin
 ```
 
 插件默认导出全局变量 可以通过 import 方式引入
 
 ```
-import  自定义变量名 (SENSE_SPRING)  form 'resources-manager-plugins'
+import  自定义变量名 (SENSE_SPRING)  form 'resource-plugin'
 ```
 
 方法 1. 初始化
@@ -33,21 +33,16 @@ SENSE_SPRING.open(
 )
 
 opt:object = {
-  type:  string          打开弹窗的类型(必填项)
-  resourceType: string   资源类型(选填)
-  algorithmType: string  资源算法类型(选填)
-  creator: string        创建资源的用户名 使用resource资源选择单选插件时必填
-  others: {              自定义参数(选填) 其他内容 -->  业务逻辑需要与资源中心确定
-    fromModel: 'panorama',  string  // 来自的模块
-    content: 类型需要与资源中心确定 //  内容
-  }
+  type:'',
+  soluation:'',
+  opeartion:'',
+  resourceType:'',
+  xxxxxxx
 }
 # 详细说明
-  * type 页面路由，确定打开页面也就是弹窗类型   参数值:  'resource' 资源选择(单选)  、 'version'  版本选择(单选) 、'mutipleversions'  版本选择(多选)  请根据业务场景确定使用
+  * type 页面路由，确定打开页面也就是弹窗类型  dataset、model、testTask、reflowDataset
   * resourceType 资源类型 , 也就是选择资源的类型  参数值:  'RAW_DATASET' 原始数据集、'ANNO_DATASET' 已标注数据集、'EVALUATION_REPORT'评测报告等...  详细参照内部文档
-  * algorithmType 算法类型                     参数值:  CLASSIFICATION 、 DETECTION 、 SEMANTIC_SEGMENTATION
-  * creator 创建者  type为resource时，插件有创建资源的功能，必须传递创建者参数
-  * others 其他参数  为了区分不同模块的不同需求，固定格式参考以上， eg:评测中心的限制选择数量   others:{fromModel:'evaluate',content:5}  content为数值类型
+  xxxxxx
 ```
 
 方法 3. 关闭插件

@@ -36,32 +36,25 @@ SenseSpringPlugin.prototype.setCallback = function (name, func) {
 }
 
 SenseSpringPlugin.prototype.open = function (opt) {
-  const RESOURCEROUTER = 'res/resource-plugin'
-  const RESOURCEVERSION = 'res/version-plugin'
-  const RESOURCEMUTIPLEVERSION = 'res/mutipleversions-plugin'
-  let routerPage = ''
-  opt.type === 'resource'
-    ? (routerPage = RESOURCEROUTER)
-    : opt.type === 'version'
-    ? (routerPage = RESOURCEVERSION)
-    : (routerPage = RESOURCEMUTIPLEVERSION)
+  let router = {
+    dataset: 'res/select-dataset',
+    model: 'res/select-model',
+    testTask: 'res/select-test-task',
+    reflowDataset: 'res/select-reflow-dataset',
+  }
   var iframeDom = document.createElement('iframe')
   iframeDom.style.border = '0'
   iframeDom.width = '100%'
   iframeDom.height = '100%'
   iframeDom.name = this.frameName
   iframeDom.id = 'frame_id_' + this.frameName
-  iframeDom.src =
-    this.host +
-    `/resource/${routerPage}/?resourceType=${encodeURIComponent(
-      opt.resourceType
-    )}&algorithmType=${encodeURIComponent(
-      opt.algorithmType
-    )}&parent_host=${encodeURIComponent(
-      window.location.href
-    )}&creator=${encodeURIComponent(opt.creator)}&others=${encodeURIComponent(
-      opt.others
-    )}` //此处修改为具体的list页面地址
+  iframeDom.allowtransparency = 'true'
+  let src = ''
+  Object.keys(opt).forEach((item, index) => {
+    src =
+      src + `${index === 0 ? '' : '&'}${item}=${encodeURIComponent(opt[item])}`
+  })
+  iframeDom.src = this.host + `/resource/${router[opt.type]}/?${src}`
 
   this.container.appendChild(iframeDom)
   if (this.callback.open_callback) {
